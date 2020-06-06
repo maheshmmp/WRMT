@@ -34,8 +34,8 @@ class RabbitDetailFragment : Fragment() {
             RecyclerviewRabbitBinding.inflate(inflater, container, false)
 
         val model = arguments?.getSerializable(RABBIT) as Rabbit
-        //fragmentDogDetailsBinding.rabbit = model
-        //Log.e("Sample>>", ""+ model.email + model.profile_image)
+        fragmentDogDetailsBinding.rabbit = model
+        Log.e("Sample>>", ""+ model.email + model.profile_image)
         return fragmentDogDetailsBinding.root
     }
 
