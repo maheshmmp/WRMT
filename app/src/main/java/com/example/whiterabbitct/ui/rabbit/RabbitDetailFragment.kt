@@ -17,7 +17,7 @@ class RabbitDetailFragment : Fragment() {
 
     companion object {
 
-        private const val RABBIT = "model"
+        private const val RABBIT = "RD"
 
         fun newInstance(dogModel: Rabbit): RabbitDetailFragment {
             val args = Bundle()
@@ -27,15 +27,15 @@ class RabbitDetailFragment : Fragment() {
             return fragment
         }
     }
-    //3
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val fragmentDogDetailsBinding =
             RecyclerviewRabbitBinding.inflate(inflater, container, false)
 
-        val model = arguments!!.getSerializable(RABBIT) as Rabbit
-        fragmentDogDetailsBinding.rabbit = model
-        Log.e("Sample>>", ""+ model.email + model.profile_image)
+        val model = arguments?.getSerializable(RABBIT) as Rabbit
+        //fragmentDogDetailsBinding.rabbit = model
+        //Log.e("Sample>>", ""+ model.email + model.profile_image)
         return fragmentDogDetailsBinding.root
     }
 

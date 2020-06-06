@@ -35,6 +35,12 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
         return inflater.inflate(R.layout.rabbits_fragment, container, false)
     }
 
+    companion object {
+        fun newInstance(): RabbitsFragment {
+            return RabbitsFragment()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)

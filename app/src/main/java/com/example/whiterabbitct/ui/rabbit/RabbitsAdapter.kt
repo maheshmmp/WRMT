@@ -29,13 +29,15 @@ class RabbitsAdapter (
         holder.recyclerviewRabbitBinding.rabbit = rabbits[position]
         holder.recyclerviewRabbitBinding.cardView.setOnClickListener {
             listener.onRecyclerViewItemClick(holder.recyclerviewRabbitBinding.cardView, rabbits[position])
+            holder.setData(rabbits[position])
         }
-        holder.setData(rabbits[position])
+
     }
 
     inner class RabbitsViewHolder(
         val recyclerviewRabbitBinding: RecyclerviewRabbitBinding
     ) : RecyclerView.ViewHolder(recyclerviewRabbitBinding.root){
+
         fun setData(rabbit: Rabbit) {
             recyclerviewRabbitBinding.rabbit = rabbit
         }
