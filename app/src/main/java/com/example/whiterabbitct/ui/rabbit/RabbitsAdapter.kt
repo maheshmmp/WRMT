@@ -29,7 +29,6 @@ class RabbitsAdapter (
         holder.recyclerviewRabbitBinding.rabbit = rabbits[position]
         holder.recyclerviewRabbitBinding.cardView.setOnClickListener {
             listener.onRecyclerViewItemClick(holder.recyclerviewRabbitBinding.cardView, rabbits[position])
-
         }
         holder.setData(rabbits[position])
     }
@@ -40,10 +39,6 @@ class RabbitsAdapter (
         fun setData(rabbit: Rabbit) {
             recyclerviewRabbitBinding.rabbit = rabbit
         }
-    }
-
-    interface OnRabbitSelected {
-        fun onRabbitSelected(rabbit: Rabbit)
     }
 
 }

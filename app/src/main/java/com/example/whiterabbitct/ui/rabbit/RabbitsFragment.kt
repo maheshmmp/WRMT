@@ -26,6 +26,7 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
 
     private var searchView: SearchView? = null
     private var queryTextListener: SearchView.OnQueryTextListener? = null
+    private lateinit var listener: OnRabbitSelected
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +38,16 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        if (context is OnRabbitSelected) {
+            listener = context
+        } else {
+            throw ClassCastException(context.toString() + " must implement OnRabbitSelected.")
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -62,13 +73,11 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
     override fun onRecyclerViewItemClick(view: View, rabbit: Rabbit) {
         when(view.id){
             R.id.cardView -> {
+
+                listener.onRabbitSelected(rabbit)
                 //Toast.makeText(requireContext(), "Item Clicked",Toast.LENGTH_LONG).show()
                 val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
                 val detailFragment: Fragment = RabbitDetailFragment()
-                val bundle = Bundle()
-                val obj: Rabbit = rabbit
-                bundle.putSerializable("RB", obj)
-                detailFragment.setArguments(bundle)
                 transaction.replace(
                     R.id.fragment,
                     detailFragment
@@ -105,14 +114,6 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
         }
         super.onCreateOptionsMenu(menu, inflater)
     }
-    private fun filter(text: String) {
-        //new array list that will hold the filtered data
-        val filterdNames: ArrayList<Rabbit> = ArrayList()
-
-        viewModel.getRabbits()
-
-    }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -125,4 +126,7 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
         return super.onOptionsItemSelected(item)
     }
 
+    interface OnRabbitSelected {
+        fun onRabbitSelected(rabbit: Rabbit)
+    }
 }

@@ -9,31 +9,34 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.whiterabbitct.R
 import com.example.whiterabbitct.data.models.Rabbit
+import com.example.whiterabbitct.databinding.RecyclerviewRabbitBinding
 import kotlinx.android.synthetic.main.fragment_rabbit_detail.view.*
 
 
 class RabbitDetailFragment : Fragment() {
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        val bundle = arguments
-        val rabbit: Rabbit? = bundle!!.getSerializable("RB") as Rabbit?
-        Log.e("Name>>", " "+rabbit?.name)
-
-        return inflater.inflate(R.layout.fragment_rabbit_detail, container, false)
-    }
-
     companion object {
 
-        fun newInstance(rabbit: Rabbit) =
-            RabbitDetailFragment().apply {
-                arguments = Bundle().apply {
+        private const val RABBIT = "model"
 
-                }
-            }
+        fun newInstance(dogModel: Rabbit): RabbitDetailFragment {
+            val args = Bundle()
+            args.putSerializable(RABBIT, dogModel)
+            val fragment = RabbitDetailFragment()
+            fragment.arguments = args
+            return fragment
+        }
     }
+    //3
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        val fragmentDogDetailsBinding =
+            RecyclerviewRabbitBinding.inflate(inflater, container, false)
+
+        val model = arguments!!.getSerializable(RABBIT) as Rabbit
+        fragmentDogDetailsBinding.rabbit = model
+        Log.e("Sample>>", ""+ model.email + model.profile_image)
+        return fragmentDogDetailsBinding.root
+    }
+
 }
