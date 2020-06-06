@@ -81,15 +81,8 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
             R.id.cardView -> {
 
                 listener.onRabbitSelected(rabbit)
-                //Toast.makeText(requireContext(), "Item Clicked",Toast.LENGTH_LONG).show()
-                val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
-                val detailFragment: Fragment = RabbitDetailFragment()
-                transaction.replace(
-                    R.id.fragment,
-                    detailFragment
-                ) // give your fragment container id in first parameter
-                transaction.addToBackStack(null) // if written, this transaction will be added to backstack
-                transaction.commit()
+                //Toast.makeText(requireContext(), "Item Clicked",Toast.LENGTH_LONG).show() )
+
             }
         }
     }
