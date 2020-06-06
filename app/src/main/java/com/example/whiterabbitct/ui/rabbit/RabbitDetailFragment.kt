@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.whiterabbitct.R
 import com.example.whiterabbitct.data.models.Rabbit
+import com.example.whiterabbitct.databinding.FragmentRabbitDetailBinding
 import com.example.whiterabbitct.databinding.RecyclerviewRabbitBinding
 import kotlinx.android.synthetic.main.fragment_rabbit_detail.view.*
 
@@ -30,13 +31,13 @@ class RabbitDetailFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val fragmentDogDetailsBinding =
-            RecyclerviewRabbitBinding.inflate(inflater, container, false)
+        val fragmentrabbitDetailsBinding =
+            FragmentRabbitDetailBinding.inflate(inflater, container, false)
 
         val model = arguments?.getSerializable(RABBIT) as Rabbit
-        fragmentDogDetailsBinding.rabbit = model
+        fragmentrabbitDetailsBinding.rabbitdetail = model
         Log.e("Sample>>", ""+ model.email + model.profile_image)
-        return fragmentDogDetailsBinding.root
+        return fragmentrabbitDetailsBinding.root
     }
 
 }

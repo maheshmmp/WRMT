@@ -2,10 +2,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="rabbitdetail"
+            type="com.example.whiterabbitct.data.models.Rabbit" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@color/cardview_light_background"
         tools:context=".ui.rabbit.RabbitDetailFragment">
 
         <LinearLayout
@@ -19,6 +29,7 @@
                 android:id="@+id/detail_iv"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
+                app:image="@{rabbitdetail.profile_image}"
                />
 
             <TextView
@@ -34,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/cardview_dark_background"
                 android:textStyle="bold"
+                android:text="@{rabbitdetail.name}"
                 android:textSize="18sp" />
 
             <TextView
@@ -48,13 +60,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
+                android:text="@{rabbitdetail.email}"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/tv_us_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Username"
+                android:text="Username"
                 android:textSize="15sp" />
 
             <TextView
@@ -62,6 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
+                android:text="@{rabbitdetail.email}"
                 android:textSize="18sp" />
 
             <TextView
@@ -75,6 +89,7 @@
                 android:id="@+id/website"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@{rabbitdetail.website}"
                 android:textStyle="bold"
                 android:textSize="18sp" />
 
@@ -90,6 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
+                android:text="@{rabbitdetail.company.name}"
                 android:textSize="18sp" />
 
             <TextView
@@ -104,6 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
+                android:text="@{rabbitdetail.address.city}"
                 android:textSize="18sp" />
 
         </LinearLayout>
