@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.Job
 import com.example.whiterabbitct.data.models.Rabbit
 import com.example.whiterabbitct.repositories.RabbitRepository
+import com.example.whiterabbitct.util.Coroutines
 
 class RabbitsViewModel(
     private val repository: RabbitRepository

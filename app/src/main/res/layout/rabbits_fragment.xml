@@ -6,8 +6,6 @@
     android:orientation="vertical"
     tools:context=".ui.rabbit.">
 
-   <include layout="@layout/toolbar" />
-
    <androidx.recyclerview.widget.RecyclerView
        tools:listitem="@layout/recyclerview_rabbit"
        android:id="@+id/recycler_view_rabbit"
