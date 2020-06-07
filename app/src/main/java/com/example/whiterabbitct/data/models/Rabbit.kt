@@ -6,6 +6,7 @@ data class Rabbit (
     val id: Int,
     val name: String,
     val image: String,
+    val username: String,
     val profile_image: String ?= null,
     val company: Company,
     val email: String,

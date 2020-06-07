@@ -14,14 +14,14 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:background="@color/cardview_light_background"
+        android:orientation="vertical"
         tools:context=".ui.rabbit.RabbitDetailFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:orientation="vertical">
 
             <!-- TODO: Update blank fragment layout -->
@@ -29,101 +29,113 @@
                 android:id="@+id/detail_iv"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                app:image="@{rabbitdetail.profile_image}"
-               />
+                android:scaleType="centerCrop"
+                app:image="@{rabbitdetail.profile_image}" />
 
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Name"
-                android:textSize="15sp" />
+                android:layout_margin="10dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/cardview_dark_background"
-                android:textStyle="bold"
-                android:text="@{rabbitdetail.name}"
-                android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Name"
+                    android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tv_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="E-mail"
-                android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{rabbitdetail.name}"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="@{rabbitdetail.email}"
-                android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="E-mail"
+                    android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tv_us_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Username"
-                android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{rabbitdetail.email}"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/us_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="@{rabbitdetail.email}"
-                android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/tv_us_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Username"
+                    android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tv_website"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Website"
-                android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/us_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{rabbitdetail.username}"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/website"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{rabbitdetail.website}"
-                android:textStyle="bold"
-                android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/tv_website"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Website"
+                    android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tv_company"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Company"
-                android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/website"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{rabbitdetail.website}"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/company"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="@{rabbitdetail.company.name}"
-                android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/tv_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Company"
+                    android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tv_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Address"
-                android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{rabbitdetail.company.name}"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="@{rabbitdetail.address.city}"
-                android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Address"
+                    android:textSize="15sp" />
 
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{rabbitdetail.address.city}"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
         </LinearLayout>
-
     </ScrollView>
 </layout>
