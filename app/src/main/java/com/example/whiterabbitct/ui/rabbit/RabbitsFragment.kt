@@ -33,6 +33,8 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.rabbits_fragment, container, false)
+
+
     }
 
     companion object {
@@ -74,6 +76,7 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
                 it.adapter = RabbitsAdapter(rabbits, this)
             }
         })
+        progressBar.visibility = View.INVISIBLE
     }
 
     override fun onRecyclerViewItemClick(view: View, rabbit: Rabbit) {
