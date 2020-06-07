@@ -67,7 +67,7 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
 
         viewModel.getRabbits()
 
-        viewModel.movies.observe(viewLifecycleOwner, Observer { rabbits ->
+        viewModel.movies.observe(viewLifecycleOwner, Observer {     rabbits ->
             recycler_view_rabbit.also {
                 it.layoutManager = LinearLayoutManager(requireContext())
                 it.setHasFixedSize(true)
@@ -79,10 +79,7 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
     override fun onRecyclerViewItemClick(view: View, rabbit: Rabbit) {
         when(view.id){
             R.id.cardView -> {
-
                 listener.onRabbitSelected(rabbit)
-                //Toast.makeText(requireContext(), "Item Clicked",Toast.LENGTH_LONG).show() )
-
             }
         }
     }
