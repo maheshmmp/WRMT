@@ -1,4 +1,4 @@
-package net.simplifiedcoding.util
+package com.example.whiterabbitct.util
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
