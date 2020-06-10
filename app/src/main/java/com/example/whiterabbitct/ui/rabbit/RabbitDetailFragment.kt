@@ -35,13 +35,12 @@ class RabbitDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val fragmentrabbitDetailsBinding =
+        val fragmentRabbitDetailsBinding =
             FragmentRabbitDetailBinding.inflate(inflater, container, false)
 
         val model = arguments?.getSerializable(RABBIT) as Rabbit
-        fragmentrabbitDetailsBinding.rabbitdetail = model
-        Log.e("Sample>>", "" + model.email + model.profile_image)
-        return fragmentrabbitDetailsBinding.root
+        fragmentRabbitDetailsBinding.rabbitdetail = model
+        return fragmentRabbitDetailsBinding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

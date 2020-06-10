@@ -15,7 +15,7 @@ class RabbitsViewModel(
     private lateinit var job: Job
 
     private val rabbits = MutableLiveData<List<Rabbit>>()
-    val movies: LiveData<List<Rabbit>>
+    val rabbitLiveDataList: LiveData<List<Rabbit>>
         get() = rabbits
 
     fun getRabbits() {

@@ -67,7 +67,7 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
 
         viewModel.getRabbits()
 
-        viewModel.movies.observe(viewLifecycleOwner, Observer {     rabbits ->
+        viewModel.rabbitLiveDataList.observe(viewLifecycleOwner, Observer {     rabbits ->
             recycler_view_rabbit.also {
                 it.layoutManager = LinearLayoutManager(requireContext())
                 it.setHasFixedSize(true)
@@ -97,7 +97,6 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
             queryTextListener = object : SearchView.OnQueryTextListener {
                  override fun onQueryTextChange(newText: String?): Boolean {
                     Log.i("onQueryTextChange", newText)
-
                     return true
                 }
 
