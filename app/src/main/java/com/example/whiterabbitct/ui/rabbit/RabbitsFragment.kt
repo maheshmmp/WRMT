@@ -19,7 +19,7 @@ import com.example.whiterabbitct.repositories.RabbitRepository
 import kotlinx.android.synthetic.main.rabbits_fragment.*
 
 
-class RabbitsFragment : Fragment(), RecyclerViewClickListener{
+class RabbitsFragment : Fragment(), RecyclerViewClickListener {
 
     private lateinit var factory: RabbitsViewModelFactory
     private lateinit var viewModel: RabbitsViewModel
@@ -67,7 +67,7 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
 
         viewModel.getRabbits()
 
-        viewModel.rabbitLiveDataList.observe(viewLifecycleOwner, Observer {     rabbits ->
+        viewModel.rabbitLiveDataList.observe(viewLifecycleOwner, Observer { rabbits ->
             recycler_view_rabbit.also {
                 it.layoutManager = LinearLayoutManager(requireContext())
                 it.setHasFixedSize(true)
@@ -77,7 +77,7 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
     }
 
     override fun onRecyclerViewItemClick(view: View, rabbit: Rabbit) {
-        when(view.id){
+        when (view.id) {
             R.id.cardView -> {
                 listener.onRabbitSelected(rabbit)
             }
@@ -95,12 +95,12 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener{
         if (searchView != null) {
             searchView!!.setSearchableInfo(searchManager.getSearchableInfo(activity!!.componentName))
             queryTextListener = object : SearchView.OnQueryTextListener {
-                 override fun onQueryTextChange(newText: String?): Boolean {
+                override fun onQueryTextChange(newText: String?): Boolean {
                     Log.i("onQueryTextChange", newText)
                     return true
                 }
 
-                 override fun onQueryTextSubmit(query: String?): Boolean {
+                override fun onQueryTextSubmit(query: String?): Boolean {
                     Log.i("onQueryTextSubmit", query)
                     return true
                 }
