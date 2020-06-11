@@ -5,17 +5,15 @@
     android:id="@+id/main_nav"
     app:startDestination="@id/rabbitsFragment">
 
-<!--    <fragment-->
-<!--        android:id="@+id/moviesFragment"-->
-<!--        android:name="net.simplifiedcoding.ui.movies.MoviesFragment"-->
-<!--        android:label="rabbits_fragment"-->
-<!--        tools:layout="@layout/rabbits_fragment" />-->
-
     <fragment
         android:id="@+id/rabbitsFragment"
         android:name="com.example.whiterabbitct.ui.rabbit.RabbitsFragment"
         android:label="movies_fragment"
-        tools:layout="@layout/rabbits_fragment" />
+        tools:layout="@layout/rabbits_fragment" >
+        <action
+            android:id="@+id/action_rabbitsFragment_to_rabbitsDetailFragment"
+            app:destination="@id/rabbitsDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/rabbitsDetailFragment"

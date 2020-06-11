@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity(), RabbitsFragment.OnRabbitSelected {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

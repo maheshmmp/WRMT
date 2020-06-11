@@ -17,21 +17,23 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="3dp"
+        android:layout_margin="5dp"
+        android:background="@android:color/black"
         android:clickable="true"
-        android:background="@color/cardview_light_background"
-        android:layout_margin="3dp">
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:background="@drawable/silhoutte_foreground"
                 android:scaleType="matrix"
                 app:image="@{rabbit.profile_image}" />
@@ -39,55 +41,88 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="5dp"
-                    android:orientation="vertical">
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    android:text="Name"
-                    tools:text="Name" />
+                    android:orientation="horizontal"
+                    android:padding="10dp">
 
-                <TextView
-                    android:id="@+id/textViewTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@{rabbit.name}"
-                    android:textColor="#1C1C1C"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
-                    tools:text="" />
+                    <ImageView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_username_android_24"
+                        android:text="Name"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        tools:text="Name" />
+
+                    <TextView
+                        android:id="@+id/textViewTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{rabbit.name}"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:textColor="#1C1C1C"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:text="" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="5dp"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    android:padding="10dp">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/textViewTitle"
-                    android:text="Company"
-                    tools:text="Company" />
+                    <ImageView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textViewTitle"
+                        android:src="@drawable/ic_website_web_24"
+                        tools:text="Company" />
 
-                <TextView
-                    android:id="@+id/textViewCN"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/textViewTitle"
-                    android:textStyle="bold"
-                    android:text="@{rabbit.company.name}"
-                    tools:text="" />
+                    <TextView
+                        android:id="@+id/textViewCN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textViewTitle"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:text="@{rabbit.company.name}"
+                        android:textStyle="bold"
+                        tools:text="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textViewTitle"
+                        android:src="@drawable/ic_baseline_alternate_email_24"
+                        tools:text="Email" />
+
+                    <TextView
+                        android:id="@+id/textViewEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textViewTitle"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:text="@{rabbit.email}"
+                        android:textStyle="bold"
+                        tools:text="" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

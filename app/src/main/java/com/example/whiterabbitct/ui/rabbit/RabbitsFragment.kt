@@ -26,6 +26,7 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener {
 
     private var searchView: SearchView? = null
     private var queryTextListener: SearchView.OnQueryTextListener? = null
+
     private lateinit var listener: OnRabbitSelected
 
     override fun onCreateView(
@@ -61,12 +62,9 @@ class RabbitsFragment : Fragment(), RecyclerViewClickListener {
 
         val api = RabbitApi()
         val repository = RabbitRepository(api)
-
         factory = RabbitsViewModelFactory(repository)
         viewModel = ViewModelProviders.of(this, factory).get(RabbitsViewModel::class.java)
-
         viewModel.getRabbits()
-
         viewModel.rabbitLiveDataList.observe(viewLifecycleOwner, Observer { rabbits ->
             recycler_view_rabbit.also {
                 it.layoutManager = LinearLayoutManager(requireContext())
